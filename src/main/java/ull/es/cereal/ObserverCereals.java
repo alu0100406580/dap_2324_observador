@@ -1,9 +1,12 @@
-package ull.es;
+package ull.es.cereal;
+
+import ull.es.Observer;
+import ull.es.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class ObserverCereals implements Observer{
+public class ObserverCereals implements Observer {
 
     String name;
     List<Product> productsList;
@@ -28,7 +31,7 @@ public class ObserverCereals implements Observer{
         return Objects.hash(name);
     }
 
-    ObserverCereals(String name) {
+    public ObserverCereals(String name) {
         this.name = name;
     }
 

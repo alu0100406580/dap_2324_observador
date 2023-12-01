@@ -1,11 +1,16 @@
 package ull.es;
 
+import ull.es.cereal.CerealObservable;
+import ull.es.cereal.ObserverCerealWindow;
+import ull.es.cereal.ObserverCereals;
+import ull.es.chocolate.ChocolateObservable;
+import ull.es.chocolate.ObserverChocolate;
+import ull.es.chocolate.ObserverChocolateWindow;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class InitGui {
 
@@ -57,7 +62,7 @@ public class InitGui {
                 if(! textField.getText().isEmpty()) {
                     String userName = textField.getText();
                     Observer observer = new ObserverChocolate(userName);
-                    observer.update(choco.products, choco.newProducts);
+                    observer.update(choco.getProducts(), choco.getNewProducts());
                     choco.addObserver(observer);
                     new ObserverChocolateWindow(observer);
                     writeList();
@@ -72,7 +77,7 @@ public class InitGui {
                 if(! textField.getText().isEmpty()) {
                     String userName = textField.getText();
                     Observer observer = new ObserverCereals(userName);
-                    observer.update(cereal.products, cereal.newProducts);
+                    observer.update(cereal.getProducts(), cereal.getNewProducts());
                     cereal.addObserver(observer);
                     new ObserverCerealWindow(observer);
                     writeList();

@@ -1,4 +1,7 @@
-package ull.es;
+package ull.es.chocolate;
+
+import ull.es.Observer;
+import ull.es.chocolate.ObserverChocolate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,17 +9,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-public class ObserverCerealWindow extends JFrame {
+public class ObserverChocolateWindow extends JFrame {
 
-    private ObserverCereals observer;
+    private ObserverChocolate observer;
     private int index;
     private JLabel imageLabel;
     private JTextArea textArea;
     private JButton prevButton, nextButton, newProductsButton;
 
-    public ObserverCerealWindow(Observer observerInput) {
+    public ObserverChocolateWindow(Observer observerInput) {
         index = 0;
-        this.observer = (ObserverCereals) observerInput;
+        this.observer = (ObserverChocolate) observerInput;
         setTitle("Productos Suscrito");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,6 +63,7 @@ public class ObserverCerealWindow extends JFrame {
                     } else {
                         urlImage = observer.getProductListNew().get(index).getImageUrl();
                     }
+                    //String urlImage = observer.getProductsList().get(index).getImageUrl();
                     if(! urlImage.isEmpty()) {
                         loadImage(urlImage);
                     }

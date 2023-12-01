@@ -1,10 +1,12 @@
-package ull.es;
+package ull.es.chocolate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ull.es.Observable;
+import ull.es.Observer;
+import ull.es.Product;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -23,7 +25,7 @@ public class ChocolateObservable implements Observable {
     ScheduledExecutorService scheduler;
     Set<Observer> observerSet;
 
-    ChocolateObservable () {
+    public ChocolateObservable() {
         this.observerSet = new HashSet<>();
         this.products = new ArrayList<>();
         this.newProducts = new ArrayList<>();
@@ -54,7 +56,7 @@ public class ChocolateObservable implements Observable {
         }
     }
 
-    List<String> getListObservers() {
+    public List<String> getListObservers() {
         List<String> observerNames = new ArrayList<>();
         for (Observer observer : this.observerSet) {
             if(observer instanceof ObserverChocolate)

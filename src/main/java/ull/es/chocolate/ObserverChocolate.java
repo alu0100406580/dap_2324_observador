@@ -1,4 +1,7 @@
-package ull.es;
+package ull.es.chocolate;
+
+import ull.es.Observer;
+import ull.es.Product;
 
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +30,7 @@ public class ObserverChocolate implements Observer {
         return Objects.hash(name);
     }
 
-    ObserverChocolate(String name) {
+    public ObserverChocolate(String name) {
         this.name = name;
     }
 

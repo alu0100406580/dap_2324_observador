@@ -50,7 +50,7 @@ public class Product {
             }
         }
     }
-        Product(String url) {
+        public Product(String url) {
         try {
             //JsonNode jsonNode = readJsonFromUrl(url);
             JsonNode jsonNode = readJsonFromUrlWithRetries(new URL(url), 3);

@@ -1,7 +1,10 @@
-package ull.es;
+package ull.es.cereal;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ull.es.Observable;
+import ull.es.Observer;
+import ull.es.Product;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +24,7 @@ public class CerealObservable implements Observable {
     ScheduledExecutorService scheduler;
     Set<Observer> observerSet;
 
-    CerealObservable() {
+    public CerealObservable() {
         this.observerSet = new HashSet<>();
         this.products = new ArrayList<>();
         this.newProducts = new ArrayList<>();
@@ -52,7 +55,7 @@ public class CerealObservable implements Observable {
         }
     }
 
-    List<String> getListObservers() {
+    public List<String> getListObservers() {
         List<String> observerNames = new ArrayList<>();
         for (Observer observer : this.observerSet) {
             if(observer instanceof ObserverCereals)
