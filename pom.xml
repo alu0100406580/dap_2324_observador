@@ -14,4 +14,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <!-- Otras dependencias pueden estar aquí -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.16.0</version> <!-- Reemplaza con la versión más reciente -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.0</version> <!-- Reemplaza con la versión más reciente -->
+        </dependency>
+
+        <!-- Otras dependencias pueden estar aquí -->
+    </dependencies>
+
+
 </project>
